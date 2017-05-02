@@ -448,6 +448,7 @@
 	],
 	"file_history":
 	[
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/package.json",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/Main.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/Cart.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/App.js",
@@ -874,8 +875,8 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 144.0,
+	"side_bar_visible": true,
+	"side_bar_width": 258.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
