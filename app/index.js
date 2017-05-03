@@ -4,8 +4,16 @@
 
 // strange, this is how webpack currently works with sass to import stylesheets
 require('./reset.scss');
-//require('./flickity.scss');
+require('./flickity.scss');
 require('./main.scss');
+
+require('font-awesome/css/font-awesome.css');
+
+var container = document.getElementById('container');
+container.innerHTML = '<i class="fa fa-twitter"></i>';
+
+
+
 console.log("implemented sasser");
 
 // this ensures that index.html is updated with webpack

@@ -19,7 +19,7 @@ const resolve = require('path').resolve;
 const webpack = require('webpack');
 
 let debug = process.env.NODE_ENV !== "production";
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 /*
  // PATHS defines an object that will reference appropriate directories
  // that will be built by webpack. Optional. Of course you can
@@ -70,8 +70,9 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.(sass|scss)$/,
-                loaders: 'style-loader!css-loader!sass-loader'
+                test: /\.(sass|scss|css)$/,
+                loaders: 'style-loader!css-loader!sass-loader',
+                loader: ExtractTextPlugin.extract('style', 'css')
             },
             {
                 test: /\.js$/,
@@ -85,16 +86,19 @@ module.exports = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 include : PATHS.fonts,
-                loader: `file?name=/fonts/[name].[ext]`
+                loader: 'url'
             },
             {
-                test: /\.(jpg|png|svg|gif|jpeg)$/,
+                test: /\.(jpg|png|svg)$/,
                 loader: 'file-loader',
                 options: {
                     name: 'path.image.[name].[hash].[ext]',
                     },
             },
             ]
+             plugins: [
+    new ExtractTextPlugin('index.min.js'),
+  ]
     },
     devtool: 'source-map',
     devServer: {
