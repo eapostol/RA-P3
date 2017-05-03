@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello ES6</title>
+
+  <link rel="stylesheet" type="text/css" href="css/flickity.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800">
+
+    <script src="/js/index.min.js"></script>
+
+</head>
+
+<body>
+		<header>
+			<div id="navigation-bar" class="flex flex-row height-nav md-height-nav flex-center-j color-bg-blue md-flex-between md-flex-center-a md-padding-hor25 min-width-screen">
+				<div id="nav-logo" class="flex-basis50 md-flex-basis15"><img src='image/bblogo.png' class="height-nav-icon padding-10"></div>
+				<div id="nav-cart" class="flex-basis50 text-right md-flex-basis15 md-nav-order"><img src='image/cart.png' class="height-nav-icon padding-10"><span id="cart-counter" class="counter"></span></div>
+				<div id="nav-line" class="nav-line md-hide"></div>
+				<div id="nav-menu" class="flex flex-row flex-around width-100 md-width-50 padding-5 md-width-60">
+					<ul class="flex flex-row flex-around width-100 color-white">
+						<li><a href="#about-us" class="color-white">About</a></li>
+						<li><a href="#category" class="color-white">category</a></li>
+						<li><a href="#feature" class="color-white">Feature</a></li>
+						<li><a href="#update" class="color-white">Update</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<section id="hero-banner">
+	    <div class="flex flex-col flex-center-j text-center image-hero-banner height-hero-banner min-width-screen">
+		    <p class="color-white">GET THE HOTTEST DEALS ON</p>
+		    <h1 class="color-white padding-10"><span class="color-yellow">NEWEST</span> LAPTOPS</h1>
+	    </div>
+  	</section>
+
+  	<section id="about-us" class="flex flex-col flex-center-j flex-center-a height-small-section min-width-screen">
+  		<div class="text-center">
+	    	<h2 class="">Your go to place for tech</h2>
+	    	<p class="padding-10 text-center md-text-width">Best Buy is one of Canada’s largest and most successful retailers, operating the Best Buy, Best Buy Mobile, and Geek Squad brands.</p>
+	    </div>
+  	</section>
+
+  	<section id="category">
+  		<ul class="flex flex-row md-padding-hor25 min-width-screen">
+	  		<li class="flex-basis100 md-flex-basis50">
+	    		<a href="#category" class="">
+	    			<h3 class="text-center image-tv padding-cat-grid md-padding-cat-grid ">TELEVISIONS</h3>
+	    		</a>
+	    	</li>
+	    	<li class="flex-basis50 md-flex-basis25">
+	    		<a href="#category" class="">
+	    			<h3 class="text-center image-audio padding-cat-grid md-padding-cat-grid ">AUDIO</h3>
+	    		</a>
+	    	</li>
+	    	<li class="flex-basis50 md-flex-basis25">
+	    		<a href="#category" class="">
+	    			<h3 class="text-center image-desktop padding-cat-grid md-padding-cat-grid ">DESKTOPS</h3>
+	    		</a>
+	    	</li>
+	    	<li class="flex-basis50 md-flex-basis25">
+			    <a href="#category" class="">
+			    	<h3 class="text-center image-tablet padding-cat-grid md-padding-cat-grid ">TABLETS</h3>
+			    </a>
+			  </li>
+			  <li class="flex-basis50 md-flex-basis25">
+			    <a href="#category" class="">
+			    	<h3 class="text-center image-laptop padding-cat-grid md-padding-cat-grid ">LAPTOPS</h3>
+			    </a>
+			  </li>
+			  <li class="flex-basis100 md-flex-basis50">
+			    <a href="#category" class="">
+			    	<h3 class="text-center image-cell padding-cat-grid md-padding-cat-grid ">CELL PHONES</h3>
+			    </a>
+			  </li>
+		  </ul>
+  	</section>
+
+  	<section id="featured" class="flex flex-col flex-center-j flex-center-a height-large-section min-width-screen width-100">
+  		<div>
+    		<h2 class="width-100">Most-Loved Products</h2>
+    	</div>
+
+    	<div id="showcase" class="margin-bot-c width-100">
+				<div class="main-carousel">
+      		<div class="carousel-cell flex flex-col flex-center-a">
+        		<a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          	<div class="carousel-image image-laptop"></div>
+		          	<p class="">LAPTOP</p>
+		          	<h3 class="">Mac Book Pro</h3>
+		          	<p class=" link">$1169.00</p>
+        		</a>
+        		<button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+      		</div>
+      		<div class="carousel-cell flex flex-col flex-center-a">
+        		<a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class="">Mac Book Pro</h3>
+		          <p class="">$1189</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+		      <div class="carousel-cell flex flex-col flex-center-a">
+		        <a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class="">Mac Book Pro</h3>
+		          <p class="">$1129.00</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+		      <div class="carousel-cell flex flex-col flex-center-a">
+		        <a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class=" margin-hor10">Mac Book Pro</h3>
+		          <p class="">$1169.00</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+		      <div class="carousel-cell flex flex-col flex-center-a">
+		        <a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class="">Mac Book Pro</h3>
+		          <p class="">$1139.00</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+		      <div class="carousel-cell flex flex-col flex-center-a">
+		        <a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class="">Mac Book Pro</h3>
+		          <p class="">$1159.00</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+		      <div class="carousel-cell flex flex-col flex-center-a">
+		        <a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class="">Mac Book Pro</h3>
+		          <p class="">$1169.00</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+		      <div class="carousel-cell flex flex-col flex-center-a">
+		        <a href="#featured" class="text-center flex flex-col flex-center flex-around">
+		          <div class="carousel-image image-laptop"></div>
+		          <p class="">LAPTOP</p>
+		          <h3 class="">Mac Book Pro</h3>
+		          <p class="">$1199.00</p>
+		        </a>
+		        <button id="addCart" class="draw-add-cart-button flex-center">Add to Cart</button>
+		      </div>
+    		</div>
+    	</div>
+  	</section>
+
+  	<section id="update" class="flex flex-col flex-center-a flex-center-j height-small-section color-bg-light-grey min-width-screen">
+      <div class="flex flex-col flex-center-a flex-center-j color-bg-light-grey">
+      	<h2 class="text-center"><span class="color-red">SAVE</span> with the weekly Best Buy eNewsletter!</h2>
+        	<div class="padding-10">
+          	<p class="text-center md-text-width">Stay updated on our latest prodcut releases, be first to find out about upcoming sales, and get free style tipes from our blog. Unsubscribe at any time.</p>
+        	</div>
+        <div id="subscribe-box" class="draw-subscribe-box width-100">
+          <form name="form1" action="#" class="flex flex-row">
+          	<input id="emailAddress" type="text" name="email1" placeholder="Your Email" class="flex-grow padding-5">
+          	<button id="subscribeButton" type="submit" name="submit" value="Submit" class="draw-subscribe-button" onclick="EmailCheck(document.form1.email1)" value="Subscribe">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+ 		<footer class="">
+
+      <section id="contact-info" class="flex flex-col flex-center-j flex-center-a height-small-section color-bg-blue md-flex-row md-flex-between md-padding-hor25 min-width-screen">
+       
+        <div class="flex flex-col flex-center-a md-flex-align-left">
+          <h5 class="color-white ">&copy; 2017 BB Clone</h5>
+          <h5 class="color-white">Powered by HTML, SASS, GULP, and ES6</h5>
+        	<h5 class="color-white">173-173-1733. <a href="mailto:info@alohaapparel.com" class="color-white">info@bbclonestore.com</a></h5>
+          <h5 class="color-white">173 REDville, Unit 1</h5>
+          <h5 class="color-white">Toronto, ON, Canada</h5>
+        </div>
+
+        <div id="social-media">
+          <ul class="flex flex-row flex-center md-flex-align-left md-flex-col">
+           	<li>
+              <a href="https://facebook.com" class="flex flex-row color-white margin-hor5">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              	<p class="margin-hor5 hide md-unhide">Facebook</p>
+              </a>
+            </li>
+            <li>
+							<a href="https://twitter.com" class="flex flex-row color-white margin-hor5">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <p class="margin-hor5 hide md-unhide">Twitter</p>
+              </a>
+            </li>
+            <li>
+	            <a href="https://www.instagram.com" class="flex flex-row color-white margin-hor5">
+	              <i class="fa fa-instagram" aria-hidden="true"></i>
+	              <p class="margin-hor5 hide md-unhide">Instagram</p>
+	            </a>
+            </li>
+            <li>
+	            <a href="https://www.pinterest.com" class="flex flex-row color-white margin-hor5">
+	              <i class="fa fa-pinterest" aria-hidden="true"></i>
+	              <p class="margin-hor5 hide md-unhide">Pinterest</p>
+	            </a>
+            </li>
+            <li>
+	            <a href="https://plus.google.com" class="flex flex-row color-white margin-hor5"> 
+	              <i class="fa fa-google-plus" aria-hidden="true"></i>
+	              <p class="margin-hor5 hide md-unhide">Google+</p>
+	            </a>
+	          </li>
+	        </ul>
+	      </div>
+      </section>
+      <script type="text/javascript" src="./js/flickity.pkgd.min.js"></script>
+      <script type="text/javascript" src="./js/Main.js"></script>
+	</body>
+
+</html>
