@@ -90,6 +90,9 @@ module.exports = {
                 test: /\.(jpg|gif|png)$/, 
                 loader: "url-loader?limit=5000&name=image/[hash].[ext]" 
             },
+            {   test: /flickity/, 
+                loader: 'imports-loader?define=>undefined' 
+            }
         ]
     },
     devtool: 'source-map',
