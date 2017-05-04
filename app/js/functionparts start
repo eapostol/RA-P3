@@ -1,0 +1,9 @@
+import App from '../App';
+export default class CarView {
+	constructor (app=new App(){
+		console.log('create cartview');
+	}
+	upateLittleCartIcon(qty){
+	document.getelemntbyid('numitemsincart')innerhtml=qty
+	}
+}

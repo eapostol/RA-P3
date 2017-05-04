@@ -1,25 +1,17 @@
-/**
- * Created by Edward_J_Apostol on 2017-04-28.
- */
-
-// strange, this is how webpack currently works with sass to import stylesheets
 require('./main.scss');
 console.log("SASS run finish");
 var Flickity = require('flickity');
-/*var flkty = new Flickity( '.', {
-  // options...
-});
-require('./app.js');
-*/console.log("JS run finish");
+//var flkty = new Flickity( '.', {});
+//import JQjs from './js/jquery-3.2.1.min';
+//let JQjsX= new JQjs();
+//import MainFn from './js/MainFn';
+//let MainFnX= new MainFn();
 
-// this ensures that index.html is updated with webpack
 var indexer = require('file-loader?name=../dist/index.html!./index.html');
 console.log("Copied index.html");
 
-/*
 import App from './App';
-
 let app = new App();
 console.log(app);
-*/
-console.log("reading index.js complete...");
+// element argument can be a selector string
+//   for an individual element

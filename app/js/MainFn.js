@@ -1,14 +1,5 @@
 export default class MainFn{
     constuctor(){
-        //Flickity Carousel
-        $('.main-carousel').flickity({
-          // options
-          cellAlign: 'center',
-          contain: true,
-          wrapAround: true,
-        });
-
-
         //Smooth Scrolling
         $(function() {
           $('a[href*="#"]:not([href="#"])').click(function() {
