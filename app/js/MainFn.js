@@ -1,5 +1,6 @@
 export default class MainFn{
     constuctor(){
+        console.log('loading MainMF')
         //Smooth Scrolling
         $(function() {
           $('a[href*="#"]:not([href="#"])').click(function() {

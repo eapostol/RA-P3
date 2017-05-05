@@ -6,8 +6,8 @@ export default class Product {
     this.name = "";
     this.image = "";
     this.largeFrontImage = "";
-    this.thumbNailImage = "";
-    this.Price = 0;
+    this.thumbnailImage = "";
+    this.price = 0;
     this.shortDesc = "";
     this.longDesc = "";
   }
