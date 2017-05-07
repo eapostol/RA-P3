@@ -460,21 +460,29 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P3"
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/image",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js"
 	],
 	"file_history":
 	[
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/webpack.config.js",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/main.scss",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/package.json",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/index.html",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/css/style.scss",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/main.scss",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/jquery-3.2.1.min.js",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/package.json",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/webpack.config.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/index.js",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/app.js",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/reset.scss",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/css/style.scss",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/css/flickity.scss",
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/css/font-awesome.min.scss",
+		"/Users/jay/Desktop/WD/Backups/RA-P3a/index.html",
 		"/Users/jay/Documents/REDAcademy/Projects/ra-webpack-es6-dev/app/index.html",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/css/font-awesome.css",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/Main.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/flickity.pkgd.min.js",
-		"/Users/jay/Desktop/WD/Backups/RA-P3a/index.html",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/index.html",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/dist/index.html",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/App.js",
@@ -489,7 +497,6 @@
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/app.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/main.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/index.js",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/app.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/index.js",
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P3/app/js/name.js",
 		"/Users/jay/Documents/REDAcademy/Projects/ra-webpack-es6-dev/package.json",
@@ -587,15 +594,11 @@
 		"/Users/jay/Documents/REDAcademy/Projects/RA-P1/update.css",
 		"/Users/jay/Documents/REDAcademy/Projects/Comp1/index.html",
 		"/Users/jay/Documents/REDAcademy/Projects/Comp1/style.css",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P0/index.html",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P0/mobile.css",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P0/style.css",
-		"/Users/jay/Documents/REDAcademy/Projects/RA-P1/mobile.css",
-		"/Users/jay/Documents/REDAcademy/Backups/RA-P0b/index.html"
+		"/Users/jay/Documents/REDAcademy/Projects/RA-P0/index.html"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -610,6 +613,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"carousel",
+			"./image/",
+			"@",
 			"../image",
 			"header",
 			".to-fade",
@@ -734,10 +740,7 @@
 			"top",
 			"font-color",
 			"banner-image2",
-			"banner-height",
-			"flex-align-around-elements",
-			"flex-align-between-elements",
-			"align-enter-elements"
+			"banner-height"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -745,6 +748,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"image/",
 			"./image",
 			"",
 			"category",
@@ -855,7 +859,7 @@
 	"project": "RA-P3.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
