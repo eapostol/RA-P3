@@ -1,5 +1,5 @@
 require('./main.scss');
-var Flickity = require('flickity');
+var JQuery = require('./js/jquery');
 var indexer = require('file-loader?name=../dist/index.html!./index.html');
 
 

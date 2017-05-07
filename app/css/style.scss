@@ -124,8 +124,14 @@ input {
 .margin-hor5 {
 	margin: 0px 5px;
 }
+.margin-hor10{
+	margin: 0px 10px;
+}
 .margin-bot-c {
 	margin-bottom: 30px;
+}
+.margin-10 {
+	margin: 10px;
 }
 .padding-5 {
 	padding: 5px;
@@ -200,6 +206,11 @@ input {
 	background-size: 115% auto;
 	transition: background 2s ease;
 }
+.imageProduct { 
+	height: 125px;
+	width: auto;
+}
+
 .draw-subscribe-box {
 	background-color: white;
   border-radius: 50px;
@@ -240,16 +251,33 @@ input {
 .draw-add-cart-button {
 	background-color: #3083d8;
 	color: #fff;
-    border-radius: 50px;
-    width: 80px;
-    height: 25px;
-    border: none;
+  border-radius: 50px;
+  width: 80px;
+  height: 25px;
+  border: none;
 }
 .carousel-image {
 	height: 250px;
 	width: 200px;
 }
-
+.carousel-cell {
+  width: 100%;
+}
+.addCartButton{
+	border: 1px solid #007fd8;
+	background-color: #007fd8;
+	color: white;
+	font-size: 0.50rem;
+	margin:2vh 0;
+	padding: 1vh;
+}
+.quickviewButton{
+	margin:2vh 0;
+	padding: 1vh;
+	background-color: white;
+	border: 1px solid #007fd8;
+	font-size:0.50rem;
+}
 /* ----- Media Queries ------ */
 
 @media (min-width: 600px) {
@@ -314,5 +342,20 @@ input {
 	}
 	.md-padding-hor25 {
 		padding: 0px 25px;
+	}
+	.carousel-cell {
+  	width: 33%;
+	}
+}
+
+@media (min-width: 1000px) {
+	.carousel-cell {
+  	width: 20%;
+	}
+}
+
+@media (min-width: 1400px) {
+	.carousel-cell {
+  	width: 15%;
 	}
 }

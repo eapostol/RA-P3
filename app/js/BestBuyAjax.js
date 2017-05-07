@@ -15,7 +15,6 @@ export default class BestBuyAjax{
         serviceChannel.open("GET",url,true);
         serviceChannel.send();
     }
-
     recieveCheck(theApp){
         console.log('RecieveCheck');
         let thisService = this;
@@ -24,7 +23,6 @@ export default class BestBuyAjax{
         };
         return eventHandler
     };
-
     checkResult(event,theApp){
         console.log('Result');
         if (event.target.readyState == 4 && event.target.status == 200){
@@ -34,7 +32,6 @@ export default class BestBuyAjax{
             theApp.checkProduct();
         }
     }
-
     getProducts(){
         console.log('GetProducts');
         if(this.productData!=null){
