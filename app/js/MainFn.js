@@ -30,18 +30,5 @@ export default class MainFn{
             return false;
           }
         };
-
-        //Add Cart
-        $(function() {
-          var count = 0;
-          var countText = $('#cart-counter');
-
-          $('.carousel-cell button').on('click', updateCartCount);
-
-          function updateCartCount() {
-            count++;
-            countText.html(count).show();
-          }
-        })
     }
 }

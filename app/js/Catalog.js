@@ -1,9 +1,6 @@
 export default class Catalog{
   constructor(){
     this.carousel = document.getElementsByClassName("main-carousel");
-    console.log(this.carousel);
-    
-
     }
   initFlickity(){
   var Flickity = require('flickity');
@@ -21,18 +18,17 @@ export default class Catalog{
   }  
 
   clickQuickView(theApp,products){
-    // console.log('middle guy');
     return function(e){
       let theSku = e.target.getAttribute("data-sku");
-      // console.log(theApp.products);
       theApp.shoppingCart.quickViewItems(theSku,theApp.products,theApp);
     }
   }
 
   onClickCartButton(theApp){
     return function(e){
+      console.log('activate' + this);
       let theSku = e.target.getAttribute("data-sku");
-      theApp.shoppingCart.addItemToCart(theSku);   
+      theApp.shoppingCart.addItemToCart(theSku);
 		}
 	}
 
@@ -52,12 +48,17 @@ export default class Catalog{
       output += '<h3 class="">' + products[i].screenSizeIn + '" ' + products[i].manufacturer + '</h3>';
       output += '<p class="">$ ' + products[i].regularPrice + '</p>';
       output += '<div class="flex flex-row">';
-      output += '<button id="' + products[i].sku + '" type="button" class="quickviewButton" data-sku="' + products[i].sku + '">Quick View</button>';
-      output += '<button id="' + products[i].sku + '" type="button" class="addCartButton" data-sku="' + products[i].sku + '">Add to Cart</button></div></div>';
+      output += '<button id="' + products[i].sku + '_q" type="button" class="quickviewButton" data-sku="' + products[i].sku + '">Quick View</button>';
+      output += '<button id="' + products[i].sku + '_a" type="button" class="addCartButton" data-sku="' + products[i].sku + '">Add to Cart</button></div></div>';
       }
     document.getElementById("Carousel").innerHTML=output;
     output="";
+    
+    for (var i=0; i<products.length; i++){
+      count = count+1;
+      document.getElementById(products[i].sku + "_q").addEventListener('click', this.clickQuickView(this.theApp), false);
+      document.getElementById(products[i].sku + "_a").addEventListener('click', this.onClickCartButton(this.theApp), false);
+    }
     this.initFlickity();
   }
-  
 }
