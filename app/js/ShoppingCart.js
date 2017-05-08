@@ -39,7 +39,7 @@ export default class ShoppingCart{
     let output = "";
     document.getElementById("QVcontent").innerHTML = output;
     document.getElementById("quickViewWindow").className = "modal unhide";
-   
+
     for(let i=0; i<products.length; i++){
       let product = products[i];
     	if (product.sku.toString() == sku.toString() ){
@@ -79,32 +79,30 @@ export default class ShoppingCart{
     document.getElementById("viewCart").innerHTML = "";
     document.getElementById('cartItemView').className = "cartcontainer unhide";
     let output = "";
-    console.log(sessionStorage.sku);
-    for (let sku in sessionStorage){
-      let currentSku = sku;
+
+    for (var i = 0; i < sessionStorage.length-1; i++){
+      let currentSku = sessionStorage.key(i);
       let currentQty = sessionStorage.getItem(currentSku);
       for (let i=0; i<theApp.products.length; i++){
-        let currentProduct = theApp.products[i];
 				if (theApp.products[i].sku.toString() == currentSku ){
           let actualProduct = theApp.products[i];
           let price = actualProduct.regularPrice;
           let subTotal = price * currentQty;
 
-          output += '<div class="CartDiv">';
-          output += '<div id="' + actualProduct.sku + '" class="shoppingcart"></div>';
-          output += '<img src="'+actualProduct.largeFrontImage+'" class="cartImages" style="height:100px; background-size:contain;background-repeat:no-repeat;background-position:center;"></div>';
-          output += '<h3 class="">' + actualProduct.manufacturer + '</h3>';
-          output += '<p class="">' + actualProduct.regularPrice + '</p>';
-          output += '<input id="qty_' + actualProduct.sku + '" class="" type="number" style="border: 1px solid blue;" data-sku="' + actualProduct.sku + '" value="' + currentQty + '">Quantity';
+          output += '<div class="CartDiv flex flex-row width-100">';
+          output += '<div id="' + actualProduct.sku + '" class="shoppingcart">';
+          output += '<img src="'+actualProduct.largeFrontImage+'" class="cartImages"></div>';
+          output += '<h3 class="productManufaturer">' + actualProduct.manufacturer + '</h3>';
+          output += '<p class="productPrice">' + actualProduct.regularPrice + '</p>';
+          output += '<input id="qty_' + actualProduct.sku + '" class="qty" type="number" style="border: 1px solid blue;" data-sku="' + actualProduct.sku + '" value="' + currentQty + '">Quantity';
           output += '<p id="' + subTotal + '" class="">Total $ ' + (currentQty * actualProduct.regularPrice) + '</p>';
           output += '<div class="buttonscart"></div>';
           output += '<button id="removeBtn" class="remove" type="button" data-sku="' + actualProduct.sku + '">Remove</div>';
-          output += '<button id="updateBtn" class="update" type="button">Update</div></div>';
+          output += '<button id="updateBtn" class="update" type="button">Update</div></div></div>';
           document.getElementById("viewCart").innerHTML=output;
-          output="";
-          
-          document.getElementById("removeBtn").addEventListener("click",(e) => {this.deleteItem(actualProduct.sku,this)},false);
-          document.getElementById("updateBtn").addEventListener("click",(e) => {this.updateQuantityofItemInCart(actualProduct.sku,theApp)},false);      
+
+          document.getElementById("removeBtn").addEventListener("click",(e) => {this.removeItemFromCart(actualProduct.sku,this)},false);
+          document.getElementById("updateBtn").addEventListener("click",(e) => {this.updateQuantityofItemInCart(actualProduct.sku,theApp)},false);     
    			}
 
         let CartTotal = document.getElementsByClassName("subtotal");
@@ -131,10 +129,9 @@ export default class ShoppingCart{
     let skuQty = sessionStorage.getItem(sku);
     let oldQty = sessionStorage.getItem('quantity');
     sessionStorage.removeItem(sku);
-    let newQty = parseInt(skuQty);
-    let newQty2 = parseInt(oldQty);
-    let newQty3 = newQty2 - newQty;
-    sessionStorage.setItem('quantity', newQty3.toString());
+    let newQty = parseInt(oldQty)-parseInt(skuQty);
+    sessionStorage.setItem('quantity', newQty.toString());
+    
   }
 
   //remove items from cart and session storage
@@ -142,9 +139,6 @@ export default class ShoppingCart{
     let skuQty = sessionStorage.getItem(sku);
     console.log(skuQty);
 
-
-
-    /*
 	  $("[data-sku='"+sku+"']").closest(".CartDiv").remove();
 			let removedItem = sessionStorage.getItem(sku);
       sessionStorage.removeItem(sku);
@@ -164,8 +158,8 @@ export default class ShoppingCart{
       let addTotal = '<p class="">Total Price: $ ' + Total + '</p>';
       document.getElementById('totalamount').innerHTML=addTotal;
    
-    this.getCartTotal();*/
-  }            
+    this.getCartTotal();
+  }          
   updateQuantityofItemInCart(sku,products){
     for (let p=0; p<sessionStorage.length; p++){
       let currentSku = sessionStorage.key(p);

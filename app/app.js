@@ -8,14 +8,13 @@ export default class App{
     this.products = null;
     this.catalog = new Catalog();
     this.shoppingCart = new ShoppingCart();
-	this.initBBAjax();
+	  this.initBBAjax();
 
     this.cartIcon = document.getElementById("cartIcon");
     this.cartIcon.addEventListener("click",(e) => {this.shoppingCart.createCartView(this)},false);
      
     this.clear = document.getElementById("clear");
     this.clear.addEventListener("click",(e) => {this.shoppingCart.clearCart(this)},false);
-
 
     this.checkout = document.getElementById("check");
     this.checkout.addEventListener("click",(e) => {this.shoppingCart.checkOut(this)},false);
