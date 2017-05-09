@@ -287,7 +287,6 @@ input {
   display: none; 
   position: fixed; 
   z-index: 100; 
-  padding-top: 100px; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -342,10 +341,8 @@ input {
 	padding-right:1vh;
 }
 .cartcontainer{
-  display: none; 
   position: fixed; 
   z-index: 100; 
-  padding-top: 100px; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -365,13 +362,14 @@ input {
 	flex-direction:row;
 	justify-content:space-around;
 	align-items:center;
-	width:80%;
+	width:90%;
 	margin:0 auto;
 	background-color:white;
 }
 .cartImages{
-	height:75px;
+	height:auto;
 	width:75px;
+
 }
 .buttonscart{
 	display:flex;
@@ -419,12 +417,10 @@ input {
 	-webkit-appearance: none;
 	cursor: pointer;
 	border: 1px solid #008040;
-	/*border-radius: 20px;*/
 	background-color: #008000;
 	color: white;
 	font-size: 0.50rem;
 	margin:1vh 0;
-	/*box-shadow: 0 5px #999;*/
 }
 .quickview{
 	margin:1vh 0;
@@ -450,11 +446,15 @@ input {
 .cartButton{
 	margin-bottom: 1vh;
 }
+.cartItems{
+	background-color: white;
+	width: 80%;
+}
 .hide {
 	display: none;
 }
 .unhide {
-	display:inline;
+	display:flex;
 }
 /* ----- Media Queries ------ */
 

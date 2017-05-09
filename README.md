@@ -1,15 +1,22 @@
-# ra-webpack-es6-dev
-A repository for use to create ES6 projects using webpack, babel and related libraries
+# RA-P3
+Best Buy Api Call
 
-notes about this repo:
+Fake Best Buy Store
+Objective: Create a one-page, responsive website that allows a user to shop at Best Buy via the Best Buy API.
 
-the branch _video_player_sample_ contains an example of the the original HTML5/CSS3/ES5 video player refactored out and made into an ES6 standalone class. The JavaScript is transpiled using Babel.
+Design Specifications:
+Based of Aloha Project P1
+API products into carousel while allowing users to quickview item or add directly to cart.
+Quick view ill give more detailed information while giving option to add to cart.
 
-https://github.com/eapostol/ra-webpack-es6-dev/tree/video-player-sample
+Must Haves:
+No function (the words), use of ES6 lanaguage/functions where approperate.
+Working shopping cart to store items.
+Use of session storage for stored items.
 
+Personal Challanges:
+Getting Webpack to function with existiting site and to export and work as before.
+Getting carousel to populate and style corrorectly.
+Styling cart with removel and clear options.
 
-
-The _master_ branch contains the original webpack - babel framework.
-
-https://github.com/eapostol/ra-webpack-es6-dev
 

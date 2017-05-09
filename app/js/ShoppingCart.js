@@ -61,69 +61,68 @@ export default class ShoppingCart{
 	}
 
   getCartTotal(){
-    if (sessionStorage.getItem('quantity') !== 'undefined') {
+    console.log(sessionStorage.getItem('quantity'));
+    if (sessionStorage.getItem('quantity') !== null){
       document.getElementById("cartQty").className = 'unhide';
-      document.getElementById("cartText").className = ' hide';
+      document.getElementById("cartText").className = 'hide';
 
       let currentVal = sessionStorage.getItem('quantity');
       document.getElementById("cartQty").value=currentVal;
-
-      if (sessionStorage.getItem('quantity') == 'undefined' ){
-        document.getElementById("cartQty").className = ' unhide';
-        document.getElementById("cartText").className =' hide';
-			}
+    }
+    if (sessionStorage.getItem('quantity') == 'undefined' || sessionStorage.getItem('quantity') == null || sessionStorage.getItem('quantity') == '0'){
+        document.getElementById("cartQty").className = 'hide';
+        document.getElementById("cartText").className ='unhide';
+		
     }
   }
 
  	createCartView(theApp){
     document.getElementById("viewCart").innerHTML = "";
-    document.getElementById('cartItemView').className = "cartcontainer unhide";
+    document.getElementById('cartItemView').className = "cartcontainer flex-col flex-center-j flex-center-a unhide flex";
     let output = "";
 
     for (var i = 0; i < sessionStorage.length-1; i++){
       let currentSku = sessionStorage.key(i);
       let currentQty = sessionStorage.getItem(currentSku);
-      for (let i=0; i<theApp.products.length; i++){
+      for (let i=0; i < theApp.products.length; i++){
 				if (theApp.products[i].sku.toString() == currentSku ){
           let actualProduct = theApp.products[i];
           let price = actualProduct.regularPrice;
           let subTotal = price * currentQty;
-
           output += '<div class="CartDiv flex flex-row width-100">';
-          output += '<div id="' + actualProduct.sku + '" class="shoppingcart">';
-          output += '<img src="'+actualProduct.largeFrontImage+'" class="cartImages"></div>';
+          output += '<div id="' + actualProduct.sku + '" class="shoppingcart" data-sku="' + actualProduct.sku + '">';
+          output += '<img src="'+actualProduct.largeFrontImage+'" class="cartImages">';
           output += '<h3 class="productManufaturer">' + actualProduct.manufacturer + '</h3>';
-          output += '<p class="productPrice">' + actualProduct.regularPrice + '</p>';
+          output += '<p class="productPrice">' + actualProduct.regularPrice.toFixed(2) + '</p>';
           output += '<input id="qty_' + actualProduct.sku + '" class="qty" type="number" style="border: 1px solid blue;" data-sku="' + actualProduct.sku + '" value="' + currentQty + '">Quantity';
-          output += '<p id="' + subTotal + '" class="">Total $ ' + (currentQty * actualProduct.regularPrice) + '</p>';
+          output += '<p id="' + subTotal + '" class="subtotal">Total $ ' + (currentQty * actualProduct.regularPrice) + '</p>';
           output += '<div class="buttonscart"></div>';
-          output += '<button id="removeBtn" class="remove" type="button" data-sku="' + actualProduct.sku + '">Remove</div>';
-          output += '<button id="updateBtn" class="update" type="button">Update</div></div></div>';
-          document.getElementById("viewCart").innerHTML=output;
-
-          document.getElementById("removeBtn").addEventListener("click",(e) => {this.removeItemFromCart(actualProduct.sku,this)},false);
-          document.getElementById("updateBtn").addEventListener("click",(e) => {this.updateQuantityofItemInCart(actualProduct.sku,theApp)},false);     
-   			}
-
-        let CartTotal = document.getElementsByClassName("subtotal");
-
-        let Total = parseInt(0);
-        for (let i=0; i<CartTotal.length; i++) {
-          let subtotals = Number(CartTotal[i].getAttribute('id'));
-          Total += subtotals;
+          output += '<button id="removeBtn_'+actualProduct.sku+'" class="remove" type="button" data-sku="' + actualProduct.sku + '">Remove</button>';
+          output += '<button id="updateBtn_'+actualProduct.sku+'" class="update" type="button">Update</button></div></div></div>';
+          document.getElementById("viewCart").innerHTML=output;  
+          document.getElementById("removeBtn_"+actualProduct.sku).addEventListener("click",(e) => {this.removeItemFromCart(actualProduct.sku,theApp)},false);
+          document.getElementById("updateBtn_"+actualProduct.sku).addEventListener("click",(e) => {this.updateQuantityofItemInCart(actualProduct.sku,theApp)},false);   
         }
-        let addTotal = '<p class="">Total Price: $' + Total + '</p>';
-        document.getElementsByClassName("totalamount").innerHTML = addTotal;
       }
-  	} 
+
+      let CartTotal = document.getElementsByClassName("subtotal");
+      let Total = parseInt(0);
+      for (let i=0; i< CartTotal.length; i++) {
+        let subtotals = Number(CartTotal[i].getAttribute('id'));
+        Total += subtotals;
+      }
+      let addTotal = '<p class="">Total Price: $' + Total.toFixed(2) + '</p>';
+      document.getElementById("totalamount").innerHTML = addTotal;
+      
+  	}
 
 	  //Closes Cart when clear
     document.getElementById("clear").addEventListener('click', function(){
-    document.getElementById("cartItemView").className = "cartcontainer hide"}, false);
+    document.getElementById("cartItemView").className = "cartcontainer flex flex-col flex-center-j flex-center-a hide"}, false);
 
 	  //Close cart when X
     document.getElementById("closeCart").addEventListener('click', function(){
-    document.getElementById("cartItemView").className = "cartcontainer hide"}, false);
+    document.getElementById("cartItemView").className = "cartcontainer flex flex-col flex-center-j flex-center-a hide"}, false);
 	}
   deleteItem(sku,thisShoppingCart){
     let skuQty = sessionStorage.getItem(sku);
@@ -136,54 +135,54 @@ export default class ShoppingCart{
 
   //remove items from cart and session storage
 	removeItemFromCart(sku,theApp){
-    let skuQty = sessionStorage.getItem(sku);
-    console.log(skuQty);
+    console.log(sku);
+    console.log(sessionStorage.getItem(sku));
+    let skuQty = parseInt(sessionStorage.getItem(sku));
+    sessionStorage.removeItem(sku);
+    let newQuantity = parseInt(sessionStorage.getItem("quantity")) - skuQty;
+    console.log(newQuantity);
+    newQuantity=newQuantity.toString();
+    sessionStorage.setItem("quantity", newQuantity);
+    console.log(sessionStorage.getItem("quantity"));
 
-	  $("[data-sku='"+sku+"']").closest(".CartDiv").remove();
-			let removedItem = sessionStorage.getItem(sku);
-      sessionStorage.removeItem(sku);
-      let newQuantity = sessionStorage.getItem("quantity");
-      newQuantity = newQuantity - removedItem;
-
-      sessionStorage.setItem("quantity",newQuantity);
-      let current_val = sessionStorage.getItem("quantity");
-
-      let CartTotal = document.getElementsByClassName("subtotal");
-              
-      let Total = parseInt(0);
+    let CartTotal = document.getElementsByClassName("subtotal");
+    console.log(CartTotal);
+    let Total = parseInt(0);
+    if(CartTotal.length==0){
+      Total=0;
+      } else {
       for (let i=0;i < CartTotal.length ;i++) {
       	let subtotals = Number(CartTotal[i].getAttribute('id'));
       	Total += subtotals;         
       }
-      let addTotal = '<p class="">Total Price: $ ' + Total + '</p>';
-      document.getElementById('totalamount').innerHTML=addTotal;
-   
+    let addTotal = '<p class="">Total Price: $ ' + Total + '</p>';
+    document.getElementById('totalamount').innerHTML=addTotal;
+    }
     this.getCartTotal();
-  }          
-  updateQuantityofItemInCart(sku,products){
-    for (let p=0; p<sessionStorage.length; p++){
-      let currentSku = sessionStorage.key(p);
-      let actualqty = sessionStorage.getItem(currentSku);
-
-      if(currentSku !== "quantity"){
-        let inputSku = document.getElementById("qty_"+currentSku);
-        let inputVal = document.getElementById("qty_"+currentSku).value;
-
-        if(inputVal.toString()!== actualqty.toString()){
+    this.createCartView(theApp);
+  }        
+  updateQuantityofItemInCart(sku,theApp){
+    for (let i=0; i<sessionStorage.length; i++){
+      let currentSku = sessionStorage.key(i);
+      let actualQty = sessionStorage.getItem(currentSku);
+        if(sku.toString() == currentSku){
+          let inputSku = document.getElementById("qty_"+sku);
+          let inputVal = document.getElementById("qty_"+sku).value;
           sessionStorage.setItem(currentSku,inputVal);
-
-          let newQuantity = sessionStorage.getItem("quantity");
-          newQuantity = parseInt(newQuantity);
-          inputVal = parseInt(inputVal);
-          actualqty = parseInt(actualqty);
-          newQuantity = newQuantity + inputVal - actualqty;
-          sessionStorage.setItem("quantity",newQuantity);
+          for (let i=0; i<sessionStorage.length; i++){
+            if(sessionStorage.key(i) == "quantity"){
+              let newQuantity = sessionStorage.getItem("quantity");
+              newQuantity = parseInt(newQuantity);
+              inputVal = parseInt(inputVal);
+              actualQty = parseInt(actualQty);
+              newQuantity = newQuantity + inputVal - actualQty;
+              sessionStorage.setItem("quantity",newQuantity);
+            }
           }
         }
-      }  
-    this.createCartView();
-    this.getCartTotal();
-    document.getElementById("overlay").className='hide';       
+      }
+    this.getCartTotal(); 
+    this.createCartView(theApp);
     }
 
   checkOut(){
@@ -196,6 +195,7 @@ export default class ShoppingCart{
 	  sessionStorage.clear();
 	  document.getElementsByClassName('viewCart').innerHTML="";
 	  document.getElementById('totalamount').innerHTML="";
+    document.getElementById('cartText').className="unhide";
 	  this.getCartTotal();
 	}
 }
