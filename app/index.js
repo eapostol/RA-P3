@@ -1,6 +1,7 @@
 require('./main.scss');
-var JQuery = require('./js/jquery');
-var indexer = require('file-loader?name=../dist/index.html!./index.html');
+let $ = require('jquery');
+let JQuery = require('jquery');
+let indexer = require('file-loader?name=../dist/index.html!./index.html');
 
 
 import App from './App';
